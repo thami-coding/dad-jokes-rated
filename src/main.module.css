@@ -1,0 +1,26 @@
+.main {
+  display: grid;
+  place-items: center;
+  /* margin-top: 8rem; */
+  height: 100vh;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.dark {
+  background: #000;
+}
+
+.theme {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid #514d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
