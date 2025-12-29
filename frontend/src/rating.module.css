@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  cursor: pointer;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.star {
+  position: relative;
+  color: #f4f4f4;
+}
+
+.full {
+  color: gold;
+}
+
+.half {
+  background: linear-gradient(90deg, gold 50%, #fffefe 50%);
+  background-clip: text;
+  color: transparent;
+}
+
+.empty {
+  color: #efecec;
+}

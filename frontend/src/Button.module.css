@@ -1,0 +1,20 @@
+.btn {
+    all: unset;
+    padding: 0.7rem 1.6rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+    margin-top: 1rem;
+}
+
+.disabled {
+    background: #E5E7EB;
+    color: #2d2c2c97;
+}
