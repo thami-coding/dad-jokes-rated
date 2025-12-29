@@ -1,0 +1,44 @@
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.loadingContainer {
+    color: rgba(83, 80, 80, 0.751);
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loadingText {
+    font-size: 1.5rem;
+}
+
+.darkSpinner {
+    color: rgba(151, 225, 242, 0.684);
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (min-width: 680px) {
+    .container {
+        min-width: 40rem;
+        max-height: 25rem;
+
+    }
+}

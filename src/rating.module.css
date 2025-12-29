@@ -7,7 +7,7 @@
 
 .star {
   position: relative;
-  color: #ccc;
+  color: #f4f4f4;
 }
 
 .full {
@@ -15,11 +15,11 @@
 }
 
 .half {
-  background: linear-gradient(90deg, gold 50%, #ccc 50%);
-  -webkit-background-clip: text;
+  background: linear-gradient(90deg, gold 50%, #fffefe 50%);
+  background-clip: text;
   color: transparent;
 }
 
 .empty {
-  color: #ccc;
+  color: #efecec;
 }

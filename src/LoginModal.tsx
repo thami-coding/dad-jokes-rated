@@ -1,10 +1,17 @@
+import useGlobalState from "./context/useGlobalState";
 import styles from "./LoginModal.module.css";
 
-export default function LoginModal({ onClose }) {
+export default function LoginModal() {
+  const { setIsLoginModalOpen, setRating } = useGlobalState()
+
+  const handleClick = () => {
+    setRating(0)
+    setIsLoginModalOpen(false)
+  }
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <h2>Login</h2>
+        <h3 className={styles.title}>Login to Rate Jokes</h3>
 
         <div className={styles.field}>
           <label>Email</label>
@@ -18,7 +25,7 @@ export default function LoginModal({ onClose }) {
 
         <button className={styles.loginBtn}>Login</button>
 
-        <button className={styles.close} onClick={onClose}>
+        <button className={styles.close} onClick={handleClick}>
           ✕
         </button>
       </div>

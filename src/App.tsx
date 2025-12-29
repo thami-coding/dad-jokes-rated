@@ -1,24 +1,18 @@
-import { useState } from 'react';
-import Container from './Container'
-import styles from './main.module.css'
+import styles from './App.module.css'
 import ThemeToggle from './ThemeToggle'
 import LoginModal from './LoginModal';
-const getTheme = () => {
-  const theme = localStorage.getItem("theme")
-  if (!theme) {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-  return localStorage.getItem("theme") === "dark"
-}
+import useGlobalState from './context/useGlobalState';
+import CardContainer from './CardContainer';
+
 
 function App() {
-  const [dark, setDark] = useState(getTheme());
-  localStorage.setItem("theme", dark ? "dark" : "light")
+  const { isDarkTheme, isLoginModalOpen } = useGlobalState()
+
   return (
-    <main className={`${styles.main} ${dark ? styles.dark : ""}`}>
-      <ThemeToggle dark={dark} setDark={setDark} />
-      <Container dark={dark} />
-      {/* <LoginModal onClose={false}  /> */}
+    <main className={`${styles.main} ${isDarkTheme && styles.dark}`}>
+      <ThemeToggle />
+      <CardContainer />
+      {isLoginModalOpen && <LoginModal />}
     </main>
   )
 }
