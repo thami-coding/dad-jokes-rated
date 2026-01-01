@@ -9,8 +9,8 @@ import Button from './Button';
 
 export default function CardContainer() {
   const { pageNumber, isDarkTheme, index } = useGlobalState()
-  const { data, isError, isPending, error, fetchStatus } = useJokesQuery(pageNumber)
 
+  const { data, isError, isPending, error, fetchStatus } = useJokesQuery(pageNumber)
   if (isPending) {
     return <div className={`${styles.loadingContainer} ${isDarkTheme && styles.darkSpinner}`}>
       <LoaderCircle size={70} className={styles.spin} />
@@ -29,7 +29,7 @@ export default function CardContainer() {
 
   const { joke, id } = data.results[index]
   const pageTotal = data.results.length - 1
-  
+
   return <div className={styles.container}>
     <JokeCard joke={joke} isDarkTheme={isDarkTheme} />
     <Ratings max={5} />

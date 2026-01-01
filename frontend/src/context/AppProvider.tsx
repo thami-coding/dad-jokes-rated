@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react"
 import { AppContext } from "./AppContext"
+import type { TFormType } from "../types/types"
 
 
 type AppProviderProps = {
@@ -18,7 +19,7 @@ export default function AppProvider({ children }: AppProviderProps) {
   const [pageNumber, setPageNumber] = useState(1)
   const [index, setIndex] = useState(0)
   const [rating, setRating] = useState(0);
-  const [user, setUser] = useState(undefined);
+  const [mode, setMode] = useState<TFormType>('login')
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
   localStorage.setItem("theme", isDarkTheme ? "dark" : "light")
 
@@ -27,10 +28,10 @@ export default function AppProvider({ children }: AppProviderProps) {
     pageNumber,
     index,
     rating,
-    user,
     isLoginModalOpen,
+    mode,
+    setMode,
     setIsLoginModalOpen,
-    setUser,
     setIsDarkTheme,
     setPageNumber,
     setIndex,

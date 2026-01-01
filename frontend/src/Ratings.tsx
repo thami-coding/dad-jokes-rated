@@ -11,10 +11,12 @@ export default function Ratings({ max = 5 }) {
       const x = e.clientX - left;
       const half = x < width / 2 ? 0.5 : 1;
       setHoverValue(i + half);
+      console.log(i + half);
    };
 
    const handleClick = () => {
       setRating(hoverValue);
+      
    }
 
    const display = hoverValue || rating;

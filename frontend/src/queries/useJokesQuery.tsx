@@ -10,7 +10,6 @@ export default function useJokesQuery(pageNumber: number = 1) {
       }
       return await response.json()
     }
-    , staleTime: Infinity,
   })
   return { data, isPending, isError, error, fetchStatus }
 }
