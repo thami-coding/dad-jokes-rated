@@ -21,18 +21,7 @@ export function useLogin() {
 
 
 
-const useLogout = () => {
-  const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: () => logout(),
-
-    onSuccess: () => {
-      queryClient.setQueryData(["user"], null);
-      queryClient.removeQueries({ queryKey: ["user"] });
-    },
-  });
-};
 
 
 
