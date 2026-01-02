@@ -72,8 +72,8 @@ export default function AuthForm() {
     } else {
       login.mutate({ email, password })
     }
+    setIsLoginModalOpen(false)
   }
-
 
   const handleClick = () => {
     setRating(0)
